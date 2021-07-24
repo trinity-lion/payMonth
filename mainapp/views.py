@@ -11,16 +11,20 @@ def home(request):
     return render(request, "home.html", {'services': services})
 
 
-def ott(request):
-    return render(request, "ott.html")
-
-
-def music(request):
-    return render(request, "music.html")
+def entertainment(request):
+    return render(request, "entertainment.html")
 
 
 def shopping(request):
     return render(request, "shopping.html")
+
+
+def program(request):
+    return render(request, "program.html")
+
+
+def game(request):
+    return render(request, "game.html")
 
 
 def etc(request):

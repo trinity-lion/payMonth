@@ -2,17 +2,12 @@
 {% block content %}
 
 <h2>home 화면입니다</h2>
-<<<<<<< HEAD
-
-
-=======
 <section class="side-nav">
     {% if user.is_authenticated %}
-    유저 로그인 시
-    {% endif %}}
-    {%else}
-    로그인 안했을 시
+    로그인 했을 때 화면
+    {% else %}
+    로그인 안했을 때 화면
+    {% endif %}
 </section>
->>>>>>> 27f6db3e5d7e6074eb87288229bc188fd83518c8
 
 {%endblock%}

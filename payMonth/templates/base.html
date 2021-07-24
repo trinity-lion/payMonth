@@ -29,27 +29,18 @@
       <!------------------>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a href="{%url 'home' %}">
-          <img="100px" src="{%static 'images/biglogo.png' %}" alt="">
+          <img src="{%static 'images/biglogo.png' %}" alt="" width=100>
         </a>
         {% if user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link" href="#"></a>
-        </li>
-        
-          <li class="nav-item">
-            <a class="nav-link" href="#"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"></a>
-          </li>
-          <a href="{% url 'logout' %}" style="margin: 700;">Log out</a>
+       
+          <a href="{% url 'logout' %}" style="margin-left: 700;">Log out</a>
           </li>
           {% endif %}
-          <li>
+<ul>
           {% if not user.is_authenticated %}
           <a class="nav-link" href="{%url 'login' %}" style="margin-left: 700px;" >Join/Log in</a>
           {% endif %}
-          </li>
+</ul>
 
       </ul>
     </div>
@@ -57,11 +48,6 @@
 <!------------------>
         </nav>
         <!--로그인되면 보일 navvar-->
-        {% if user.is_authenticated %}
-        <a href="{%url 'music' %}">music</a>
-        <a href="{%url 'shopping' %}">shopping</a>
-        <a href="{%url 'etc' %}">etc</a>
-        {% endif %}
         <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="{%url 'entertainment' %}">ott</a>
@@ -70,9 +56,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                   <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="{%url 'music' %}">music</a>
+                    <a class="nav-item nav-link" href="{%url 'entertainment' %}">entertainment</a>
                     <a class="nav-item nav-link" href="{%url 'shopping' %}">shopping</a>
-                    <a class="nav-item nav-link disabled" href="{%url 'etc' %}">etc</a>
+                    <a class="nav-item nav-link" href="{%url 'etc' %}">etc</a>
+                    <a class="nav-item nav-link" href="{%url 'program' %}">program</a>
+                    <a class="nav-item nav-link" href="{%url 'game' %}">game</a>
                   </div>
                 </div>
               </nav>
@@ -81,34 +69,15 @@
         <!---->
         <div class="main-block">
 
-    <!--로그인되면 보일 navvar-->
-    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">Features</a>
-            <a class="nav-item nav-link" href="#">Pricing</a>
-            <a class="nav-item nav-link disabled" href="#">Disabled</a>
-          </div>
-        </div>
-      </nav>
-      <!-- Navbar content -->
-    </nav>
-    <!---->
     <div class="main-block">
+      <!--
       {% if user.is_authenticated %}
       <a href="{%url 'entertainment' %}">entertainment</a>
       <a href="{%url 'shopping' %}">shopping</a>
       <a href="{%url 'program' %}">program</a>
       <a href="{%url 'game' %}">game</a>
       <a href="{%url 'etc' %}">etc</a>
-
+      -->
 
       {% endif %}
       {% block content %}

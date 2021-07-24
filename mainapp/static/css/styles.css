@@ -1,8 +1,19 @@
 @import "reset.css";
 @import "login.css";
-<<<<<<< HEAD
+
+@font-face {
+	font-family: 'yg-jalnan';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+  }
+  *{
+	font-family: 'yg-jalnan';
+  }
+
 *{
     margin: 20px 20px;
+
 }
 
 @media all and (min-width: 992px) {
@@ -13,10 +24,6 @@
 	.navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
 }	
 
-=======
-@import "home.css";
-
 body {
     margin: 10px 10px;
 }
->>>>>>> c4517c13a5166e1baa620e49041935e244334b4b

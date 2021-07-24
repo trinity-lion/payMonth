@@ -19,4 +19,14 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect("home")
-    
+
+def register_view(request):
+    if request.method=='POST' :
+        form=UserCreationForm(request.POST)
+        if form.is_valid():
+            user=form.save()
+            login=(request, user)
+        return redirect("home")
+    else :
+        form=AuthenticationForm()
+        return render(request, 'login.html', {'form':form})

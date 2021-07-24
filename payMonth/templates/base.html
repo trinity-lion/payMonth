@@ -16,13 +16,18 @@
 
             <h2>nav-bar</h2>
 
-            
-            <h2>nav-bar입니다</h2>
-            <a href="{% url 'login' %}}">Login</a>
-            <a href="{%url 'home' %}">로고</a>
-            <a href="{%url 'home' %}">로고</a>
-            <a href="{%url 'home' %}">로고</a>
 
+            <a href="{%url 'home' %}">logo</a>
+
+            {% if not user.is_authenticated %}
+            <a href="{%url 'login' %}">Login</a>
+            <a href="{%url 'register' %}">회원가입</a>
+
+            {% endif %}
+
+            {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">logout</a>
+            {% endif %}
         </nav>
 
         <div class="main-block">

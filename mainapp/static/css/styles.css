@@ -1,5 +1,6 @@
 @import "reset.css";
 @import "login.css";
+<<<<<<< HEAD
 
 @font-face {
 	font-family: 'yg-jalnan';
@@ -15,15 +16,49 @@
     margin: 20px 20px;
 
 }
+=======
+@import "home.css";
+>>>>>>> 97e861fbb8e8cae0cf0109f6959066b9874c5e63
 
 @media all and (min-width: 992px) {
-	.navbar .nav-item .dropdown-menu{  display:block; opacity: 0;  visibility: hidden; transition:.3s; margin-top:0;  }
-	.navbar .nav-item:hover .nav-link{ color: rgb(34, 42, 85);  }
-	.navbar .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
-	.navbar .dropdown-menu.fade-up{ top:180%;  }
-	.navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
-}	
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s;
+        margin-top: 0;
+    }
+
+    .navbar .nav-item:hover .nav-link {
+        color: rgb(34, 42, 85);
+    }
+
+    .navbar .dropdown-menu.fade-down {
+        top: 80%;
+        transform: rotateX(-75deg);
+        transform-origin: 0% 0%;
+    }
+
+    .navbar .dropdown-menu.fade-up {
+        top: 180%;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        transition: .3s;
+        opacity: 1;
+        visibility: visible;
+        top: 100%;
+        transform: rotateX(0deg);
+    }
+}
+
+<<<<<<< HEAD
+body {
+    margin: 10px 10px;
+}
+=======
 
 body {
     margin: 10px 10px;
 }
+>>>>>>> 97e861fbb8e8cae0cf0109f6959066b9874c5e63

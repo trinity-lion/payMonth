@@ -27,10 +27,13 @@
         <a href="{%url 'updateService' service.id %}">
             <div class="content-box">
                 {%if service.image %}
-                <img src="" alt="">
+                <img width="50px" height="50px" src="{{service.image.url}}" alt="">
                 {%endif%}
+                <br>
+                <br>
+                <h2>{{service.shared}}명과 공유</h2>
                 <h2>{{service.name}}</h2>
-                <h2>{{service.cost}}</h2>
+                <h2>{{service.cost}}원</h2>
                 <h2>{{service.shared}}</h2>
             </div>
         </a>

@@ -6,9 +6,10 @@ from django.db import models
 
 class Service(models.Model):
     CATEGORY_CHOICES = [
-        ('OTT', 'OTT'),
-        ('Music', 'Music'),
+        ('Entertainment', 'Entertainment'),
         ('Shopping', 'Shopping'),
+        ('Program', 'Program'),
+        ('Game', 'Game'),
         ('Etc', 'Etc'),
     ]
     PAY_CHOICES = [
@@ -23,11 +24,14 @@ class Service(models.Model):
         ('3', '3'),
         ('4', '4'),
     ]
-    category = models.CharField(max_length=100, choices=CATEGORY_CHOICES)
+    category = models.CharField(
+        max_length=100, default='Entertainment', choices=CATEGORY_CHOICES)
     name = models.CharField(max_length=100)
     cost = models.CharField(max_length=100, help_text='원')
-    pay_interval = models.CharField(max_length=100, choices=PAY_CHOICES)
-    shared = models.CharField(max_length=100, choices=SHARED_CHOICES)
+    pay_interval = models.CharField(
+        max_length=100, default='month', choices=PAY_CHOICES)
+    shared = models.CharField(
+        max_length=100, default='1', choices=SHARED_CHOICES)
     image = models.ImageField(upload_to="post/", blank=True, null=True)
 
     def __str__(self) -> str:

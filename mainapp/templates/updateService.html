@@ -1,0 +1,9 @@
+{%extends 'base.html' %}
+{% block content %}
+<form action="{%url 'updateService' service.id %}" method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+    {{form.as_p}}
+    <input type="submit" value="수정하기" />
+    <button><a href="{%url 'deleteService' service.id %}">삭제하기</a></button>
+</form>
+{%endblock%}

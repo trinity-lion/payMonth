@@ -7,7 +7,8 @@ from django.contrib.auth.decorators import login_required
 
 
 def home(request):
-    return render(request, "home.html")
+    services = Service.objects.all()
+    return render(request, "home.html", {'services': services})
 
 
 def ott(request):
@@ -39,3 +40,33 @@ def addService(request):
 
     else:  # 유효하지 않은 입력
         return redirect("home")
+
+
+@login_required(redirect_field_name=None, login_url="login")
+def updateService(request, id):
+    if request.method == "GET":
+        service = get_object_or_404(Service, pk=id)
+        # 기본값 설정
+        form = ServiceForm(initial={
+            "name": service.name,
+            "category": service.category,
+            "cost": service.cost,
+            "pay_interval": service.pay_interval,
+            "shared": service.shared,
+            "image": service.image,
+        })
+        return render(request, "updateService.html", {"form": form, 'service': service})
+
+    form = ServiceForm(request.POST, request.FILES)
+    if form.is_valid():
+        new_service = form.save()
+        return redirect("home", new_service.id)
+    else:
+        return redirect("home")
+
+
+@login_required(redirect_field_name=None, login_url="login")
+def deleteService(request, id):
+    diary = get_object_or_404(Service, pk=id)
+    diary.delete()
+    return redirect("home")

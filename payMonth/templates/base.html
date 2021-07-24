@@ -17,7 +17,9 @@
             <h2>nav-bar</h2>
 
 
-            <a href="{%url 'home' %}">logo</a>
+            <a href="{%url 'home' %}">
+                <img width="100px" src="{%static 'images/biglogo.png' %}" alt="">
+            </a>
 
             {% if not user.is_authenticated %}
             <a href="{%url 'login' %}">Login</a>
@@ -32,11 +34,10 @@
 
         <div class="main-block">
             {% if user.is_authenticated %}
-            <a href="ott">ott</a>
-            <a href="music">music</a>
-            <a href="shopping">shopping</a>
-            <a href="iservice">iservice</a>
-            <a href="delievery">delievery</a>
+            <a href="{%url 'ott' %}">ott</a>
+            <a href="{%url 'music' %}">music</a>
+            <a href="{%url 'shopping' %}">shopping</a>
+            <a href="{%url 'etc' %}">etc</a>
             {% endif %}
             {% block content %}
             {% endblock %}

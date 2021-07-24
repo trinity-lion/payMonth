@@ -8,20 +8,16 @@ def home(request):
 
 
 def ott(request):
-    return render(request, "home.html")
+    return render(request, "ott.html")
 
 
 def music(request):
-    return render(request, "home.html")
+    return render(request, "music.html")
 
 
 def shopping(request):
-    return render(request, "home.html")
+    return render(request, "shopping.html")
 
 
-def iservice(request):
-    return render(request, "home.html")
-
-
-def delievery(request):
-    return render(request, "home.html")
+def etc(request):
+    return render(request, "etc.html")

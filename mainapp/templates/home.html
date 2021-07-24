@@ -1,28 +1,36 @@
 {%extends 'base.html' %}
 {% block content %}
 
-<h2>home 화면입니다</h2>
+{% if user.is_authenticated %}
+<div class="home-row home-top">
+    <div class="home-col">
+        내가 구독한 서비스
+    </div>
+    <div class="home-col">
+        새로운 서비스를 구독하였다면?
+        <button>
+            <a href="{%url 'addService' %}">추가하기</a>
+        </button>
+    </div>
+</div>
 
-<section class="side-nav">
-    {% if user.is_authenticated %}
-    로그인 했을 때 화면
-    <a href="{%url 'addService' %}">추가하기</a>
-
+<div class="service-container">
     {%for service in services %}
-    <a href="{%url 'updateService' service.id %}">
-        <div class="content-box">
-            <h2>{{service.name}}</h2>
-            <h2>{{service.cost}}</h2>
-            <h2>{{service.shared}}</h2>
-        </div>
-    </a>
-    <hr>
+    <div class="service-box">
+
+        <a href="{%url 'updateService' service.id %}">
+            <div class="content-box">
+                {%if service.image %}
+                <img src="" alt="">
+                {%endif%}
+                <h2>{{service.name}}</h2>
+                <h2>{{service.cost}}</h2>
+                <h2>{{service.shared}}</h2>
+            </div>
+        </a>
+    </div>
     {% endfor %}
-    {% endif %}
-    
-
-
-
-</section>
-
+</div>
+<hr>
+{%endif%}
 {%endblock%}

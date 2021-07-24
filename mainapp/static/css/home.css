@@ -1,0 +1,26 @@
+.home-row {
+    margin-bottom: 30px;
+}
+
+.home-row.home-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.home-row.home-top {
+    margin: 0 60px;
+}
+
+.service-container {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.service-box {
+    margin: 30px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    display: flex;
+}

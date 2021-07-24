@@ -1,4 +1,4 @@
-{%load static%}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,83 +30,59 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <a href="{%url 'home' %}">
-            <img src="{%static 'images/biglogo.png' %}" alt="" width="100px" style="margin-left: 50px;">
+            <img src="{%static 'images/biglogo.png' %}" alt="" width="100px" >
         </a>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#"></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="#"></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link" href="#"></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+          {% if not user.is_authenticated %}
+            <a class="nav-link" href="{%url 'login' %}" style="margin-left: 700px;" >Join/Log in</a>
+          {% endif %}
+          {% if user.is_authenticated %}
+          <a href="{% url 'logout' %}">Log out</a>
+          {% endif %}
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-
-
       </ul>
     </div>
   </nav>
 <!------------------>
-
-
-
-
-            {% if not user.is_authenticated %}
-            <a href="{%url 'login' %}">Login</a>
-            <a href="{%url 'register' %}">회원가입</a>
-
-            {% endif %}
-
-            {% if user.is_authenticated %}
-            <a href="{% url 'logout' %}">logout</a>
-            {% endif %}
         </nav>
 
+
+        <!--로그인되면 보일 navvar-->
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="#">Features</a>
+                    <a class="nav-item nav-link" href="#">Pricing</a>
+                    <a class="nav-item nav-link disabled" href="#">Disabled</a>
+                  </div>
+                </div>
+              </nav>
+            <!-- Navbar content -->
+          </nav>
+        <!---->
         <div class="main-block">
             {% if user.is_authenticated %}
             <a href="{%url 'ott' %}">ott</a>
             <a href="{%url 'music' %}">music</a>
             <a href="{%url 'shopping' %}">shopping</a>
             <a href="{%url 'etc' %}">etc</a>
+
+
             {% endif %}
             {% block content %}
             {% endblock %}

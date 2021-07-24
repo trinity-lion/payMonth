@@ -2,4 +2,12 @@
 {% block content %}
 
 <h2>home 화면입니다</h2>
+<section class="side-nav">
+    {% if user.is_authenticated %}
+    유저 로그인 시
+    {% endif %}}
+    {%else}
+    로그인 안했을 시
+</section>
+
 {%endblock%}

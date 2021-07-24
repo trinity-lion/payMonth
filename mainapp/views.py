@@ -8,7 +8,19 @@ from django.contrib.auth.decorators import login_required
 
 def home(request):
     services = Service.objects.all()
-    return render(request, "home.html", {'services': services})
+    entertainments = Service.objects.filter(category='entertainment')
+    shoppings = Service.objects.filter(category='shopping')
+    programs = Service.objects.filter(category='program')
+    games = Service.objects.filter(category='game')
+    etcs = Service.objects.filter(category='etc')
+    return render(request, "home.html", {
+        'services': services,
+        'entertainments': entertainments,
+        'shoppings': shoppings,
+        'programs': programs,
+        'games': games,
+        'etcs': etcs,
+    })
 
 
 def entertainment(request):

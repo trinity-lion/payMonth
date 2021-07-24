@@ -1,6 +1,7 @@
 @import "reset.css";
 @import "login.css";
-*{
+@import "home.css";
+
+body {
     margin: 10px 10px;
 }
-

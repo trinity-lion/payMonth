@@ -3,11 +3,9 @@ from .views import *
 
 urlpatterns = [
     path("", home, name="home"),
-    path("ott/", home, name="ott"),
-    path("music/", home, name="music"),
-    path("shopping/", home, name="shopping"),
-    path("etc/", home, name="etc"),
-    path("addService/", home, name="addService"),
-
-
+    path("ott/", ott, name="ott"),
+    path("music/", music, name="music"),
+    path("shopping/", shopping, name="shopping"),
+    path("etc/", etc, name="etc"),
+    path("addService/", addService, name="addService"),
 ]

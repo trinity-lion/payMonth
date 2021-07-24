@@ -31,6 +31,13 @@
         </nav>
 
         <div class="main-block">
+            {% if user.is_authenticated %}
+            <a href="ott">ott</a>
+            <a href="music">music</a>
+            <a href="shopping">shopping</a>
+            <a href="iservice">iservice</a>
+            <a href="delievery">delievery</a>
+            {% endif %}
             {% block content %}
             {% endblock %}
         </div>

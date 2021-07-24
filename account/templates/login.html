@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
     
 {% block content %}  
-    <h1>Login</h1>
+{% load static %}
+ 
     <form action ="{% url 'login' %}" method="post">
         {% csrf_token %} 
       {{form.as_p}}
-      <button type="submit">로그인</button>
+      <button type="submit">Log in</button>
          </form>
+
+         <a href = "{% url 'register' %}">아직 Paymonth 회원이 아니라면?</a>
     {% endblock %}

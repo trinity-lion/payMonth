@@ -46,36 +46,35 @@
           <a href="{% url 'logout' %}" style="margin: 700;">Log out</a>
           </li>
           {% endif %}
+          <li>
           {% if not user.is_authenticated %}
           <a class="nav-link" href="{%url 'login' %}" style="margin-left: 700px;" >Join/Log in</a>
           {% endif %}
+          </li>
 
       </ul>
     </div>
   </nav>
 <!------------------>
         </nav>
-
         <!--로그인되면 보일 navvar-->
         {% if user.is_authenticated %}
         <a href="{%url 'ott' %}">ott</a>
         <a href="{%url 'music' %}">music</a>
         <a href="{%url 'shopping' %}">shopping</a>
         <a href="{%url 'etc' %}">etc</a>
-
         {% endif %}
         <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="{%url 'ott' %}">ott</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                   <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="#">Features</a>
-                    <a class="nav-item nav-link" href="#">Pricing</a>
-                    <a class="nav-item nav-link disabled" href="#">Disabled</a>
+                    <a class="nav-item nav-link" href="{%url 'music' %}">music</a>
+                    <a class="nav-item nav-link" href="{%url 'shopping' %}">shopping</a>
+                    <a class="nav-item nav-link disabled" href="{%url 'etc' %}">etc</a>
                   </div>
                 </div>
               </nav>

@@ -12,7 +12,7 @@ def login_view(request):
             user = authenticate(request=request, usernmae=username, password=password )
             if user is not None : #USER가 없는게 아니라면(즉 테이블에 존재하는 상태라면)
                 login(request,user) #이 로그인 기능을 위해 auth에서 로긔인 기능 import
-            return redirect('home')
+        return redirect('home') #인덴트중요!
     else :
         form=AuthenticationForm()
         return render(request, 'login.html', {'form':form})

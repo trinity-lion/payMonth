@@ -43,9 +43,8 @@
             <a class="nav-link" href="#"></a>
           </li>
           {% if not user.is_authenticated %}
-            <a class="nav-link" href="{%url 'login' %}" style="margin-left: 700px;" >Join/Log in</a>
+          <a class="nav-link" href="{%url 'login' %}" style="margin-left: 700px;" >Join/Log in</a>
           {% endif %}
-          
           {% if user.is_authenticated %}
           <a href="{% url 'logout' %}">Log out</a>
           {% endif %}
@@ -55,7 +54,6 @@
   </nav>
 <!------------------>
         </nav>
-
 
         <!--로그인되면 보일 navvar-->
         {% if user.is_authenticated %}

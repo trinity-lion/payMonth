@@ -6,7 +6,7 @@
 <p class="cent" style="text-align: center;">
  
     <form action ="{% url 'login' %}" method="post">
-        {% csrf_token %} 
+      {% csrf_token %} 
       {{form.as_p}}
 
       <button class="btn btn-primary" type="submit">Log in</button>

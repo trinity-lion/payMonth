@@ -1,5 +1,11 @@
 {%extends 'base.html' %}
+{% load static %}
+
 {% block content %}
+
+{% if not user.is_authenticated %}
+<img src="{% static 'images/1.png' %}" alt="" width=1200px style="margin: 40px 40px;">
+{% endif %}
 
 {% if user.is_authenticated %}
 <div class="home-row home-top">
